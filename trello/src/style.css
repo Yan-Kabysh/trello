@@ -1,0 +1,360 @@
+body{
+    /* box-sizing: border-box; */
+    margin: 0;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #0a13c6, #9d0404);
+    /* box-sizing: border-box; */
+    
+}
+
+.header {
+  max-width: 1170px;
+  width: 100%;
+  height: 80px; /* Увеличил высоту для лучшего визуального эффекта */
+  background-color: #5848ef;
+  margin: 0 auto; /* Добавил отступ сверху и снизу для лучшего выравнивания */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  border: 3px solid rgb(23, 0, 104);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавил тень */
+  gap: 40%;
+  transition: all 0.3s ease;
+}
+
+/* Hover-эффект при наведении */
+.header:hover {
+  transform: translateY(-2px); /* Добавил небольшое поднятие при наведении */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Изменил тень при наведении */
+}
+
+/* Добавил переходы для плавных анимаций */
+
+.main{
+    max-width: 1170px;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.main__todo, .main__doing, .main__done{
+    width: 33%;
+    height: 100%;
+    border: 2px solid rgb(5, 159, 194);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.main__todo{
+    position: relative;
+}
+
+.title{
+    height: 100px;
+    width: 24.2%;
+    border: 2px solid beige;
+    border-radius: 10px;
+    font-size: 20px;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70%;
+    position: fixed;
+    background-color: blueviolet;
+}
+.titleSpan{
+  margin-top: 20px;
+}
+
+.addBtn, .deleteAll, .dataFromServer{
+    height: 40px;
+    width: 24.6%;
+    background: rgb(3, 143, 138);
+    font-size: 20px;
+    border: 2px solid rgb(58, 58, 0);
+    border-radius: 7px;
+    position: fixed;
+    bottom: 13;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: aliceblue;
+}
+
+.addBtn:hover, .deleteAll:hover, .dataFromServer:hover {
+  background: rgb(97, 170, 194);
+  transform: translateY(-2px); /* Добавил небольшое поднятие при наведении */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Изменил тень при наведении */
+}
+
+.add-modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 30%;
+    top: 20%;
+    width: 40%; 
+    height: 300px; 
+    overflow: auto; 
+    /* background-color: rgb(0,0,0);  */
+    /* background-color: rgba(0,0,0,0.4);  */
+  
+  }
+  
+  /* Модальное содержание/коробка */
+  .modal-content {
+    background-color: rgb(14, 203, 178);
+    border: 1px solid #888;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 15px;
+    border-radius: 10px; /* скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* тень */
+}
+
+  
+  /* Кнопка закрытия */
+  .close-modal {
+    color: #4739bc;
+    position: absolute;
+    top: 20px; /* Устанавливаем отступ сверху */
+    right: 30px; /* Устанавливаем отступ справа */
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-modal:hover,
+  .close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .addTitle{
+   border: 1px solid bisque;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 30%;
+  }
+
+  .addDescription{
+    border: 1px solid bisque;
+    border-radius: 5px;
+    width: 90%;
+    height: 40%;
+  }
+
+  .addBtnsDiv{
+    display: flex;
+    gap: 30%;
+  }
+
+  .cardDiv {
+    width: 100%; /* Убрал лишний 1% */
+    max-width: 323px; /* Добавил максимальную ширину для лучшего масштабирования на мобильных устройствах */
+    
+    height: auto; /* Убрал фиксированную высоту */
+    padding: 20px; /* Добавил внутренний отступ */
+    border: 2px solid beige;
+    border-radius: 10px;
+    font-size: 20px;
+    color: beige;
+    background-color: #5848ef; /* Добавил фоновый цвет */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавил тень */
+}
+
+
+.editBtn, .deleteBtn, .doingBtn, .backBtn, .compliteBtn {
+  width: 100px; /* Ширина кнопок */
+  height: 40px; /* Высота кнопок */
+  color: beige;
+  background-color: darkblue;
+  font-size: 16px;
+  border: none; /* Убрал границу */
+  border-radius: 5px; /* Скругление углов */
+  cursor: pointer;
+  margin-right: 10px; /* Добавил небольшой отступ между кнопками */
+}
+
+/* Hover-эффект при наведении */
+.editBtn:hover, .deleteBtn:hover, .doingBtn:hover, .backBtn, .compliteBtn {
+  background-color: #1c1b66; /* Изменил цвет фона при наведении */
+}
+
+/* Добавил переходы для плавных анимаций */
+.editBtn, .deleteBtn, .doingBtn, .backBtn, .compliteBtn {
+  transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+
+  .userTimeDiv{
+    display: flex;
+    gap: 50%;
+  }
+
+.todoCardsBlock, .doingCardsBlock, .doneCardsBlock{
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+  gap: 20px;
+}
+.btnsDiv{
+  display: flex;
+  gap: 5%;
+}
+
+/* Стили для окна предупреждения */
+.warmingWindow, .warmingAddWindow, .warmingNothingToDeleteWindow {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(130, 178, 252);
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  gap: 10px; /* добавлено для управления расстоянием между элементами внутри контейнера */
+}
+
+
+/* .warmingAddWindow{
+  display: none;
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
+
+/* Стили для заголовка окна предупреждения */
+.warmingTitle, .warmingNTDTitle, .warmingAddTitle {
+  font-size: 24px;
+  /* font-weight: bold; */
+  /* color: #333; */
+  color: white;
+
+}
+
+/* Стили для блока кнопок в окне предупреждения */
+.warmingBtnBox {
+  margin-top: 20px;
+}
+
+/* Стили для кнопок в окне предупреждения */
+.warmingCancelBtn, .warmingDeleteBtn, .warmingAddOkeyBtn, .warmingNTDBtn {
+  background-color: rgb(0, 108, 171);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* Стили для наведения на кнопки в окне предупреждения */
+.warmingCancelBtn:hover, .warmingDeleteBtn:hover, .warmingAddOkeyBtn:hover, .warmingNTDBtn:hover {
+  background-color: #999;
+}
+
+
+
+
+/* Стилизация скроллбаров для браузеров на базе WebKit (Chrome, Safari) */
+/* Общие стили для скроллбара */
+::-webkit-scrollbar {
+  width: 0px; /* Ширина скроллбара */
+}
+
+.todo__title, .todoCard{
+  background-color: rgb(25, 105, 110);
+}
+
+.doing__title, .doingCard{
+  background-color: rgb(7, 96, 164);
+}
+
+.done__title, .doneCard{
+  background-color: rgb(131, 0, 163);
+}
+
+
+.addCancel, .addConfirm {
+  background-color: #5848ef; /* цвет фона */
+  color: white; /* цвет текста */
+  border: none; /* убираем границу */
+  border-radius: 5px; /* скругление углов */
+  padding: 5px 20px; /* внутренние отступы */
+  font-size: 16px; /* размер шрифта */
+  cursor: pointer; /* курсор при наведении */
+  transition: all 0.3s ease;
+}
+
+.addCancel:hover, .addConfirm:hover {
+  background-color: #4739bc; /* изменение цвета фона при наведении */
+  transform: translateY(-2px); /* Добавил небольшое поднятие при наведении */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Изменил тень при наведении */
+}
+
+.addBtnsDiv{
+  gap: 22%;
+}
+
+.selecttext{
+  color: white; /* цвет текста */
+  font-size: 16px; /* размер шрифта */
+  
+}
+
+
+/* Стили для выпадающего меню */
+select {
+  background-color: rgb(71, 57, 188); /* цвет фона */
+  color: rgb(255, 255, 255); /* цвет текста */
+  border: 1px solid #ccc; /* граница */
+  border-radius: 5px; /* скругление углов */
+  padding: 8px; /* внутренние отступы */
+  font-size: 16px; /* размер шрифта */
+}
+
+/* Стили для опций внутри меню */
+select option {
+  background-color: rgb(71, 57, 188); /* цвет фона опции */
+  color: white; /* цвет текста опции */
+}
+
+/* При наведении на опцию */
+select option:hover {
+  background-color: rgb(71, 57, 188); /* изменение цвета фона опции при наведении */
+}
+
+
+.warmingConfirm{
+  color: red;
+  display: none;
+}
+
+.title__span{
+  text-transform:uppercase ;
+}
